@@ -1,0 +1,19 @@
+{% extends "2_cols.html" %}
+{% block title %} Search History {% endblock %}
+{% block page_title %} Search History {% endblock %}
+{% block content %}
+{% if user.is_authenticated %}
+    <h3>{{ user.username }}'s {{ domain_name }} history</h3>
+    {% if keywords_list %}
+        <ol>
+            {% for keyword in keywords_list %}
+                <li><a href="{% url 'ranking:rank_history' domain_name keyword %}">{{ keyword }}</a></li>
+            {% endfor %}
+        </ol>
+    {% else %}
+        <p>還沒開始搜尋嗎？</p>
+    {% endif %}
+{% else %}
+    <p>Login First!</p>
+{% endif %}
+{% endblock %}

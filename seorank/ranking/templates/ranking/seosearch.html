@@ -1,0 +1,41 @@
+{% extends '3_cols.html' %}
+{% block title %} Search Page {% endblock %}
+{% block page_title %} Search Page {% endblock %}
+{% block col_2 %}
+<h2>使用說明：</h2>
+<p>關鍵字若有多個，以英文逗號分開。</p>
+<p>如：關鍵字1,關鍵字2,關鍵字3</p>
+<p>網頁速度很慢，請等網頁讀取完畢再進行下一個動作</p>
+<hr>
+    <form method="POST">
+        {% csrf_token %}
+        <div class="mb-3">
+            <div>
+                <label class="form-label">{{ form.domain_name.label}}</label>
+            </div>
+            {{ form.domain_name }}
+        </div>
+        <div class="mb-3">
+            <div>
+                <label class="form-label">{{ form.keyword.label}}</label>
+            </div>
+            {{ form.keyword }}
+        </div>
+        <button type="submit" class="btn btn-primary">Search</button>
+    </form>
+{% endblock %}
+
+
+{% block col_3 %}
+<h2>搜尋結果</h2>
+<p>域名: {{ domain_name }}</p>
+    {% if combine_list %}
+        {% for keyword, rank_value in combine_list %}
+            <p>Keyword: {{ keyword }}</p>
+            <p>Rank: {{ rank_value }}</p>
+            <p>----------------------</p>
+        {% endfor %}
+    {% else %}
+        <p>還沒搜尋</p>
+    {% endif %}
+{% endblock %}

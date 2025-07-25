@@ -1,0 +1,69 @@
+{% extends 'base.html' %}
+{% block title %} Sign up {% endblock %}
+{% block style %}
+<style>
+    .form-bg-color {
+        background-color: var(--bs-body-color);
+        color: var(--bs-body-bg);
+    }
+
+    .form-bg {
+        margin: auto;
+        border: 1px solid;
+        border-radius: 8px;
+        padding: 50px;
+    }
+
+    .topic-title {
+        text-align: center;
+        padding: 30px;
+        font-size: 100px;
+    }
+
+</style>
+{% endblock %}
+{% block content %}
+<main class="min-vh-100">
+    <h3 class="topic-title">Sign up</h3>
+    <div class="d-flex justify-content-center align-items-center">
+        <div class="form-bg form-bg-color">
+            <form method="POST">
+                {% csrf_token %}
+                <div class="mt-auto">
+                    <label class="form-label">{{ user_form.username.label }}</label>
+                </div>
+                <div class="mb-3">
+                    {{ user_form.username }}
+                </div>
+                <div class="mt-auto">
+                    <label class="form-label">{{ user_form.password.label }}</label>
+                </div>
+                <div class="mb-3">
+                    {{ user_form.password }}
+                </div>
+                <div class="row mt-auto">
+                    <label class="form-label col">{{ user_form.last_name.label }}</label>
+                    <label class="form-label col">{{ user_form.first_name.label }}</label>
+                </div>
+                <div class="row mb-3">
+                    <div class="col">{{ user_form.last_name }}</div>
+                    <div class="col">{{ user_form.first_name }}</div>
+                </div>
+                <div class="mt-auto">
+                    <label class="form-label">{{ user_form.email.label }}</label>
+                </div>
+                <div class="mb-3">
+                    {{ user_form.email }}
+                </div>
+                <div class="mt-auto">
+                    <label class="form-label">{{ profile_form.nickname.label }}</label>
+                </div>
+                <div class="mb-3">
+                    {{ profile_form.nickname }}
+                </div>
+                <button class="form-control">註冊</button>
+            </form>
+        </div>
+    </div>
+</main>
+{% endblock %}

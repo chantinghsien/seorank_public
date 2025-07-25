@@ -1,0 +1,19 @@
+{% extends "2_cols.html" %}
+{% block title %} Rank History {% endblock %}
+{% block page_title %} Rank History {% endblock %}
+{% block content %}
+{% if user.is_authenticated %}
+    <h3>{{ user.username }}'s {{ keyword_name }} history</h3>
+    {% if rank_list %}
+        <ol>
+            {% for rank in rank_list %}
+                <li>{{ rank }}</li>
+            {% endfor %}
+        </ol>
+    {% else %}
+        <p>還沒開始搜尋嗎？</p>
+    {% endif %}
+{% else %}
+    <p>Login First!</p>
+{% endif %}
+{% endblock %}
