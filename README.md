@@ -14,3 +14,13 @@ Don't use this repository directly, if you don't understand it.
 [[Django] - 陸、建立超級使用者(superuser)](https://hackmd.io/@timchan/BkZJ7jFvel)
 
 [[Django] - 柒-1、網頁的功能與頁面](https://hackmd.io/@timchan/HyNB9nYDex)
+
+[[Django] - 柒-2、五個主要頁面](https://hackmd.io/@timchan/HydQcwnPlx)
+
+[[Django] - 捌、表單](https://hackmd.io/@timchan/SJ59acpDgx)
+
+[[Django] - 玖-1、Search view](https://hackmd.io/@timchan/ByogRVlOee)
+
+[[Django] - 玖-2、search_history view](https://hackmd.io/@timchan/BykBjJzOxl)
+
+[[Django] - 玖-3、login view](https://hackmd.io/@timchan/B1OTSy7ule)
